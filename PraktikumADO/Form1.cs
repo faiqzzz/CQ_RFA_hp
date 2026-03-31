@@ -1,1 +1,1 @@
-﻿if (conn.State == ConnectionState.Closed) conn.Open();
+﻿txtHasil.Text = "Hasil: " + jumlah.ToString() + " data";
