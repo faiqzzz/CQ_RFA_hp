@@ -1,13 +1,13 @@
-﻿private void btnUpdateSKS_Click(object sender, EventArgs e)
+﻿private void btnInsertProdi_Click(object sender, EventArgs e)
 {
     try
     {
         Koneksi();
         if (conn.State == ConnectionState.Closed) conn.Open();
-        string query = "UPDATE MataKuliah SET SKS = 4 WHERE KodeMK = 'IF210101'";
+        string query = "INSERT INTO ProgramStudi VALUES ('MI01','Manajemen Informatika')";
         cmd = new SqlCommand(query, conn);
-        int hasil = cmd.ExecuteNonQuery();
-        MessageBox.Show("SKS berhasil diupdate! Baris: " + hasil);
+        cmd.ExecuteNonQuery();
+        MessageBox.Show("Data Prodi berhasil ditambahkan!");
     }
     catch (Exception ex) { MessageBox.Show(ex.Message); }
     finally { conn.Close(); }
