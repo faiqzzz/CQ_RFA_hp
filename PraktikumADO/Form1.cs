@@ -1,19 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
-
-namespace PraktikumADO
+﻿private void Koneksi()
 {
-    public partial class Form1 : Form
-    {
-       
-    }
+    // Pastikan pakai @ agar backslash terbaca benar
+    conn = new SqlConnection(@"Data Source=DESKTOP-DDDRHRS\RIDHOFAIQAHMAD;Initial Catalog=DBAkademiADO;Integrated Security=True");
 }
-
