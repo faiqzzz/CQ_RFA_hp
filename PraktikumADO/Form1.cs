@@ -1,1 +1,2 @@
-﻿txtHasil.Text = "Hasil: " + jumlah.ToString() + " data";
+﻿}
+}
