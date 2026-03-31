@@ -1,11 +1,10 @@
-﻿private void btnHitungMhs_Click(object sender, EventArgs e)
+﻿private void btnHitungMK_Click(object sender, EventArgs e)
 {
     try
     {
         Koneksi();
         conn.Open();
-        string query = "SELECT COUNT(*) FROM Mahasiswa";
-        cmd = new SqlCommand(query, conn);
+        cmd = new SqlCommand("SELECT COUNT(*) FROM MataKuliah", conn);
         int jumlah = (int)cmd.ExecuteScalar();
         txtHasil.Text = jumlah.ToString();
         conn.Close();
