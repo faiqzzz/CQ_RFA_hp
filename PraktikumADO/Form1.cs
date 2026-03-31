@@ -1,14 +1,13 @@
-﻿private void btnUpdate_Click(object sender, EventArgs e)
+﻿private void btnHitungDosen_Click(object sender, EventArgs e)
 {
     try
     {
         Koneksi();
-        conn.Open();
-        string query = "UPDATE Mahasiswa SET Alamat = 'Yogyakarta' WHERE NIM = '23110100001'";
-        cmd = new SqlCommand(query, conn);
-        int hasil = cmd.ExecuteNonQuery();
-        MessageBox.Show("Jumlah baris terpengaruh : " + hasil);
-        conn.Close();
+        if (conn.State == ConnectionState.Closed) conn.Open();
+        cmd = new SqlCommand("SELECT COUNT(*) FROM Dosen", conn);
+        int jumlah = Convert.ToInt32(cmd.ExecuteScalar());
+        txtHasil.Text = "Jumlah Dosen: " + jumlah.ToString();
     }
     catch (Exception ex) { MessageBox.Show(ex.Message); }
+    finally { conn.Close(); }
 }
